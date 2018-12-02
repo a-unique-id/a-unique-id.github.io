@@ -53,12 +53,10 @@ window.onload=function(){
   var container=document.getElementById("container")
   var num=0;
   for(var i in sounds){
-    num++
-    if((num%4)==1){
+    if((++num%4)==1){
       var newRow=document.createElement("div")
       newRow.className="row"
       container.appendChild(newRow)
-      console.log(newRow)
     }
     var newDiv=document.createElement("div")
     newDiv.className="col-3 btn"
@@ -69,12 +67,11 @@ window.onload=function(){
     newDiv.sound=new Howl({src: [sounds[i]]})
     newDiv.onclick=function(){
       this.sound.play()
-      console.log(this.sound)
     }
     newRow.appendChild(newDiv)
   }
 }
 </script>
-<a href="https://drive.google.com/drive/folders/1hLFHe5RJgig99r53rMSk8vWB8s_8eTI0">Most sounds from shared folder by @DanTheVP</a>
+<center><a href="https://drive.google.com/drive/folders/1hLFHe5RJgig99r53rMSk8vWB8s_8eTI0">Most sounds from shared folder by @DanTheVP</a></center>
 </body>
 </html>

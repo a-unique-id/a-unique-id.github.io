@@ -1,0 +1,255 @@
+<h1 id="out" style='width:100%'></h1><input type="submit" value="reroll" onclick="out.innerHTML=randomLevelIdea()"/>
+<script>
+out.innerHTML=randomLevelIdea()
+
+function randomLevelIdea() {
+  function getRandomInt(pMin, pMax) {
+    const min = Math.ceil(pMin);
+    const max = Math.floor(pMax);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  var data = {
+    styles: ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+    night: [
+      "Ground",
+      //"Underground",
+      //"Underwater",
+      //"Ghost House",
+      "Airship",
+      "Castle",
+      "Desert",
+      "Snow",
+      //"Forest",
+      "Sky",
+    ],
+    clearCondition: ["don't touch the ground", "parts", "status"],
+    gizmos: {
+      Burner: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Cannon: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Vine: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Lift: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Flimsy Lift": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Lava Lift": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Fast Lava Lift": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Seesaw: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Grinder: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Bumper: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Swinging Claw": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Skewer: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Fire Bar": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "One-Way Wall": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Track: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Conveyor Belt": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "ON/OFF Switch": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Dotted-Line Block": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Snake Block": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "P Block": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "P Switch": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "POW Block": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Spring/Trampoline": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Warp Door": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      Icicle: ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      Twister: ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      //Key: ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Bill Blaster": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Banzai Bill": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Cursed Key": ["SMB1"],
+      Crate: ["3DW"],
+      "! Block": ["3DW"],
+      "Blinking Block": ["3DW"],
+      "Track Block": ["3DW"],
+      Tree: ["3DW"],
+      "ON/OFF Trampoline": ["3DW"],
+      "Mushroom Trampoline": ["3DW"],
+      "Dash Block": ["3DW"],
+      "Spike Block": ["3DW"],
+      "Cloud Lift": ["3DW"],
+      "Red POW Block": ["3DW"],
+      "Warp Box": ["3DW"],
+
+      "Note block/Music block": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Donut Block": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Hidden Block": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "? Block": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      Spikes: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Clear Pipes": ["3DW"],
+      "Normal Pipe": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+    },
+    powerups: {
+      "Super Mushroom": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Master Sword": ["SMB1"],
+      "Fire Flower": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Superball Flower": ["SMB1"],
+      "Big Mushroom": ["SMB1"],
+      "Super Leaf": ["SMB3"],
+      "Cape Feather": ["SMW"],
+      "Propeller Mushroom": ["NSMBU"],
+      "Super Bell": ["3DW"],
+      "Super Hammer": ["3DW"],
+      "SMB Mushroom": ["SMB1"],
+      "Frog Suit": ["SMB3"],
+      "Power Balloon": ["SMW"],
+      "Super Acorn": ["NSMBU"],
+      "Boomerang Flower": ["3DW"],
+      "Super Star": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Rotten Mushroom": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Shoe Goomba": ["SMB1", "SMB3"],
+      "Yoshi's Egg": ["SMW", "NSMBU"],
+      "Cannon Box": ["3DW"],
+      "Propeller Box": ["3DW"],
+      "Goomba Mask": ["3DW"],
+      "Bullet Bill Mask": ["3DW"],
+      "Red POW Box": ["3DW"],
+    },
+    enemies: {
+      "Goom family": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Koopa Troopa": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Buzzy Beetle": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Buzzy Shell": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Spike Top": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Ant Trooper": ["3DW"],
+      Spiny: ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Spiny Shell": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Blooper/Blooper Nanny": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Cheep Cheep": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      Skipsqueak: ["3DW"],
+      Stingby: ["3DW"],
+      "Jumping/Fire/Normal Piranha Plant": [
+        "SMB1",
+        "SMB3",
+        "SMW",
+        "NSMBU",
+        "3DW",
+      ],
+      Muncher: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Piranha Creeper": ["3DW"],
+      Thwomp: ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Monty Mole": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Rocky Wrench": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Sledge/Hammer Bro": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Sledge Bro": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Fire Bro/Heavy Fire Bro": ["3DW"],
+      "Chain Chomp": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Unchained Chomp": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Hop-Chops": ["3DW"],
+      "Spike/Spike ball": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      Snowball: ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      Wiggler: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Boo/Boo Buddies/Peppa": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Lava Bubble": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Bob-omb": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Dry Bones": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Dry Bones Shell": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Fish Bone": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      Magikoopa: ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Pokey/Snow Pokey": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Bowser/Meowser": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      "Bowser Jr.": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Boom Boom/Pom Pom": ["SMB1", "SMB3", "SMW", "NSMBU", "3DW"],
+      Mechakoopa: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Angry Sun/Moon": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Lakitu/Lakitu's cloud": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Charvaargh: ["3DW"],
+      Bully: ["3DW"],
+      Porcupuffer: ["3DW"],
+      "Clown Car": ["SMB1", "SMB3", "SMW", "NSMBU"],
+      "Koopa Troopa Car": ["3DW"],
+      Larry: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Iggy: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Wendy: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Lemmy: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Roy: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Morton: ["SMB1", "SMB3", "SMW", "NSMBU"],
+      Ludwig: ["SMB1", "SMB3", "SMW", "NSMBU"],
+    },
+  };
+
+  var chosen = {
+    style: "",
+    night: "",
+    clearCondition: "",
+    others: [],
+  };
+
+  function randomElement(arr) {
+    return arr[getRandomInt(0, arr.length - 1)];
+  }
+
+  function filterElement(styles) {
+    var varNames = ["powerups", "enemies", "gizmos"];
+    for (var k = 0; k < varNames.length; k++) {
+      for (var i in data[varNames[k]]) {
+        var shared = false;
+        for (var j = 0; j < styles.length; j++) {
+          if (data[varNames[k]][i].indexOf(styles[j]) !== -1) shared = true;
+        }
+        if (!shared) delete data[varNames[k]][i];
+      }
+    }
+  }
+
+  if (Math.random() > 0.7) {
+    chosen.style = randomElement(data.styles);
+    filterElement([chosen.style]);
+  }
+  if (Math.random() > 0.9) {
+    chosen.night = randomElement(data.night);
+    if (chosen.night === "Ground") delete data.powerups["Rotten Mushroom"];
+  }
+  if (Math.random() > 0.9) {
+    chosen.clearCondition = randomElement(data.clearCondition);
+  }
+
+  const num =
+    !(chosen.style || chosen.night || chosen.clearCondition) ||
+    Math.random() < 0.9
+      ? getRandomInt(1, 4)
+      : 0;
+  let others = [];
+  for (var i = 0; i < num; i++) {
+    others.push(
+      Math.random() > 0.8
+        ? "powerups"
+        : Math.random() > 0.5
+        ? "gizmos"
+        : "enemies"
+    );
+  }
+  for (var i = 0; i < others.length; i++) {
+    var vals = Object.keys(data[others[i]]);
+    var o = randomElement(vals);
+    filterElement(data[others[i]][o]);
+    delete data[others[i]][o];
+    chosen.others.push(o);
+  }
+  var chosenString = [];
+  if (chosen.style) {
+    chosenString.push(chosen.style);
+  }
+  if (chosen.night) {
+    chosenString.push("Night " + chosen.night);
+  }
+  if (chosenString.length) {
+    chosenString = chosenString.join(" ") + " ";
+  } else {
+    chosenString = "";
+  }
+  var chosenString2 = [];
+  if (chosen.clearCondition) {
+    chosenString2.push(chosen.clearCondition + " clear condition");
+  }
+  if (chosen.others) {
+    chosenString2 = chosenString2.concat(chosen.others);
+  }
+  if (chosenString2.length) {
+    chosenString2 = " with " + chosenString2.join(",");
+  } else {
+    chosenString2 = "";
+  }
+  return (chosenString + "Level" + chosenString2).replace(
+    /,(?=[^,]*$)/,
+    " and "
+  );
+}
+</script>
